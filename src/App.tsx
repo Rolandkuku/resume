@@ -32,10 +32,10 @@ function App() {
         <div className="max-w-4xl mx-auto mb-4 flex justify-end">
           <button
             onClick={() => setIsDark(!isDark)}
-            className="p-2 text-2xl rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            className="py-2 px-4 text-2xl rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
             aria-label="Toggle theme"
           >
-            {isDark ? "☀️" : "🌙"}
+            {isDark ? "🌙" : "☀️"}
           </button>
         </div>
         <Resume />

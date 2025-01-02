@@ -3,6 +3,24 @@ const primaryHoverClass = "hover:text-mint-500 dark:hover:text-mint-400"; // Usi
 const secondaryClass = "text-neutral-700 dark:text-neutral-300";
 const bgPrimaryClass = "bg-primary-50 dark:bg-primary-900/20";
 
+const socialLinks = [
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/renaud-b-8b516b8b",
+    icon: "🔗",
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/grollec",
+    icon: "🐙",
+  },
+  {
+    name: "GitLab",
+    url: "https://gitlab.com/Rolandkuku",
+    icon: "🦊",
+  },
+];
+
 const skills = [
   {
     title: "Frontend",
@@ -92,10 +110,40 @@ const education = [
   },
 ];
 
+const projects = [
+  {
+    name: "Sencrop",
+    tech: "React, Typescript, Storybook, NestJS",
+    description:
+      "Sencrop aims at empowering farmers with live meteo data coming from +30,000 online device accross europe.",
+    url: "https://sencrop.com/uk/",
+  },
+  {
+    name: "Total flexible solutions",
+    tech: "React, TypeScript, Django",
+    description:
+      "Total flex provides optimised power solutions from the enegy production to its consumption in order to reduce GHG emissions.",
+    url: "https://flexiblepower.totalenergies.com/en",
+  },
+  {
+    name: "Folk",
+    tech: "React, TypeScript, Apollo GraphQL",
+    description: "Folk is a CRM with contacts as a primitive.",
+    url: "https://www.folk.app/",
+  },
+  {
+    name: "Girondins4Ever",
+    tech: "React Native, TypeScript, WordPress REST API",
+    description:
+      "G4E is a fanzine about the mighty Girondins de Bordeaux football club. This is a simple Android news reader.",
+    url: "https://play.google.com/store/apps/details?id=com.girondins4ever.g4etest",
+  },
+];
+
 export default function Resume() {
   return (
     <div className="max-w-4xl mx-auto bg-white dark:bg-neutral-800 p-12 rounded-lg shadow-lg transition-colors duration-300">
-      <header className="text-center mb-8 pb-8 border-b-2 border-neutral-100 dark:border-neutral-700">
+      <header className="text-center mb-8 pb-8">
         <h1
           className={`text-5xl ${primaryClass} font-bold mb-3 tracking-tight`}
         >
@@ -115,14 +163,20 @@ export default function Resume() {
             renaud.bellec.3@gmail.com
           </a>
           <br />
-          🔗{" "}
-          <a
-            href="https://www.linkedin.com/in/renaud-b-8b516b8b"
-            target="_blank"
-            className={`${primaryClass} ${primaryHoverClass} transition-colors font-medium`}
-          >
-            LinkedIn Profile
-          </a>
+          <div className="flex justify-center items-center gap-4 mt-3">
+            {socialLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${primaryClass} ${primaryHoverClass} transition-colors font-medium flex items-center gap-1`}
+              >
+                <span>{link.icon}</span>
+                <span>{link.name}</span>
+              </a>
+            ))}
+          </div>
         </div>
       </header>
 
@@ -136,7 +190,7 @@ export default function Resume() {
           {skills.map((category) => (
             <div
               key={category.title}
-              className={`${bgPrimaryClass} p-5 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg`}
+              className={`${bgPrimaryClass} p-5 rounded-lg border transition-all duration-300`}
             >
               <h3 className={`${primaryClass} text-xl font-bold mb-3`}>
                 {category.title}
@@ -153,11 +207,48 @@ export default function Resume() {
         <h2
           className={`text-3xl ${primaryClass} font-bold mb-6 pb-2 border-b-2 border-neutral-100 dark:border-neutral-700`}
         >
+          🚀 Notable Projects
+        </h2>
+        <a>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projects.map((project) => (
+              <a href={project.url} target="_blank" key={project.name}>
+                <div
+                  key={project.name}
+                  className={`${bgPrimaryClass} p-5 rounded-lg border`}
+                >
+                  <h3 className={`${primaryClass} text-xl font-bold mb-2`}>
+                    {project.name}
+                  </h3>
+                  <div className={`${secondaryClass} font-medium mb-2`}>
+                    {project.tech}
+                  </div>
+                  <p className={`${secondaryClass} text-lg mb-3`}>
+                    {project.description}
+                  </p>
+                  {project.url && (
+                    <p
+                      className={`${primaryClass} ${primaryHoverClass} transition-colors text-sm font-medium`}
+                    >
+                      View Project →
+                    </p>
+                  )}
+                </div>
+              </a>
+            ))}
+          </div>
+        </a>
+      </section>
+
+      <section className="mb-12">
+        <h2
+          className={`text-3xl ${primaryClass} font-bold mb-6 pb-2 border-b-2 border-neutral-100 dark:border-neutral-700`}
+        >
           🧑‍💻 Professional Experience
         </h2>
 
         {professionalExperience.map((job) => (
-          <div key={job.title} className="mb-8">
+          <div key={job.company} className="mb-8">
             <div className="text-2xl font-bold text-neutral-800 dark:text-neutral-200 mb-1">
               {job.title}
             </div>

@@ -1,3 +1,5 @@
+import { ExportCv } from "./ExportCv";
+
 const primaryClass = "text-primary-500 dark:text-neutral-200";
 const primaryHoverClass = "hover:text-mint-500 dark:hover:text-mint-400"; // Using mint instead of secondary
 const secondaryClass = "text-neutral-700 dark:text-neutral-300";
@@ -140,9 +142,20 @@ const projects = [
   },
 ];
 
+const introduction = {
+  title: "👋 Hello world",
+  content: `My name is Renaud and I am what you would call a ✨ Full Stack Software Developer ✨ these days.
+  I'm specialized in the React ecosystem, with a strong focus on delivering high-quality, performant applications.
+  Over the past 10 years, I've been lucky enough to work on beautiful projects, gathering friends and experience along the way.
+  I'll be available for a new adventure from late March 2025. If you think my expertise fits the needs of your awesome project, let's have a chat!`,
+};
+
 export default function Resume() {
   return (
     <div className="max-w-4xl mx-auto bg-white dark:bg-neutral-800 p-12 rounded-lg shadow-lg transition-colors duration-300">
+      <div>
+        <ExportCv />
+      </div>
       <header className="text-center mb-8 pb-8">
         <h1
           className={`text-5xl ${primaryClass} font-bold mb-3 tracking-tight`}
@@ -179,6 +192,19 @@ export default function Resume() {
           </div>
         </div>
       </header>
+
+      <section className="mb-12">
+        <h2
+          className={`text-3xl ${primaryClass} font-bold mb-6 pb-2 border-b-2 border-neutral-100 dark:border-neutral-700`}
+        >
+          {introduction.title}
+        </h2>
+        <p
+          className={`${secondaryClass} text-lg leading-relaxed whitespace-pre-line`}
+        >
+          {introduction.content}
+        </p>
+      </section>
 
       <section className="mb-12">
         <h2

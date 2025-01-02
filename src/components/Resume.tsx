@@ -118,6 +118,7 @@ export default function Resume() {
           🔗{" "}
           <a
             href="https://www.linkedin.com/in/renaud-b-8b516b8b"
+            target="_blank"
             className={`${primaryClass} ${primaryHoverClass} transition-colors font-medium`}
           >
             LinkedIn Profile

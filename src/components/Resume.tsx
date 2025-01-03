@@ -1,9 +1,10 @@
 import { ExportCv } from "./ExportCv";
 
-const primaryClass = "text-primary-500 dark:text-neutral-200";
+const primaryClass = "text-brand-500 dark:text-neutral-200";
 const primaryHoverClass = "hover:text-mint-500 dark:hover:text-mint-400"; // Using mint instead of secondary
 const secondaryClass = "text-neutral-700 dark:text-neutral-300";
-const bgPrimaryClass = "bg-primary-50 dark:bg-primary-900/20";
+const bgPrimaryClass = "bg-brand-50 dark:bg-brand-900/20";
+const bgPrimaryClassHover = "hover:bg-brand-100 dark:hover:bg-brand-900/10";
 
 const socialLinks = [
   {
@@ -121,17 +122,17 @@ const projects = [
     url: "https://sencrop.com/uk/",
   },
   {
+    name: "Folk",
+    tech: "React, TypeScript, Apollo GraphQL",
+    description: "Folk is a CRM with contact as a primitive.",
+    url: "https://www.folk.app/",
+  },
+  {
     name: "Total flexible solutions",
     tech: "React, TypeScript, Django",
     description:
       "Total flex provides optimised power solutions from the enegy production to its consumption in order to reduce GHG emissions.",
     url: "https://flexiblepower.totalenergies.com/en",
-  },
-  {
-    name: "Folk",
-    tech: "React, TypeScript, Apollo GraphQL",
-    description: "Folk is a CRM with contacts as a primitive.",
-    url: "https://www.folk.app/",
   },
   {
     name: "Girondins4Ever",
@@ -146,14 +147,15 @@ const introduction = {
   title: "👋 Hello world",
   content: `My name is Renaud and I am what you would call a ✨ Full Stack Software Developer ✨ these days.
   I'm specialized in the React ecosystem, with a strong focus on delivering high-quality, performant applications.
-  Over the past 10 years, I've been lucky enough to work on beautiful projects, gathering friends and experience along the way.
+  I’ve also been working on the backend. Mostly with NestJS and Django.
+  Over the past 10 years, I've been lucky enough to work on beautiful projects, making friends and gathering experience along the way.
   I'll be available for a new adventure from late March 2025. If you think my expertise fits the needs of your awesome project, let's have a chat!`,
 };
 
 export default function Resume() {
   return (
-    <div className="max-w-4xl mx-auto bg-white dark:bg-neutral-800 p-12 rounded-lg shadow-lg transition-colors duration-300">
-      <div>
+    <div className="max-w-4xl mx-auto bg-white dark:bg-neutral-800 p-6 sm:p-12 mb-8 rounded-2xl shadow-lg transition-colors duration-300">
+      <div className="mb-8">
         <ExportCv />
       </div>
       <header className="text-center mb-8 pb-8">
@@ -166,7 +168,7 @@ export default function Resume() {
           ⌨ Full Stack Software Developer ⌨
         </div>
         <div className="mt-4 text-lg text-neutral-600 dark:text-neutral-400 space-y-1">
-          📍 Aix-en-Provence, Provence-Alpes-Côte d'Azur, France
+          📍 Aix-en-Provence, France
           <br />
           📧{" "}
           <a
@@ -241,7 +243,7 @@ export default function Resume() {
               <a href={project.url} target="_blank" key={project.name}>
                 <div
                   key={project.name}
-                  className={`${bgPrimaryClass} p-5 rounded-lg border`}
+                  className={`${bgPrimaryClass} ${bgPrimaryClassHover} transition-all duration-300 p-5 rounded-lg border `}
                 >
                   <h3 className={`${primaryClass} text-xl font-bold mb-2`}>
                     {project.name}
@@ -321,6 +323,10 @@ export default function Resume() {
           </div>
         ))}
       </section>
+
+      <footer className="mt-8 pt-4 border-t border-neutral-100 dark:border-neutral-700 text-center text-neutral-600 dark:text-neutral-400">
+        <p>© {new Date().getFullYear()} Renaud Bellec. All rights reserved.</p>
+      </footer>
     </div>
   );
 }

@@ -27,9 +27,9 @@ function App() {
     <div
       className={`min-h-screen w-full transition-colors duration-300 ${isDark ? "dark bg-gray-900" : "bg-gray-100"} ${isDark ? "dark" : ""}`}
     >
-      <div className="p-8">
+      <div className="p-0 sm:p-8">
         {/* Theme Toggle */}
-        <div className="max-w-4xl mx-auto mb-4 flex justify-end">
+        <div className="max-w-4xl mx-auto flex justify-end">
           <button
             onClick={() => setIsDark(!isDark)}
             className="py-2 px-4 text-2xl rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"

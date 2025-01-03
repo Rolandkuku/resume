@@ -147,7 +147,7 @@ const introduction = {
   title: "👋 Hello world",
   content: `My name is Renaud and I am what you would call a ✨ Full Stack Software Developer ✨ these days.
   I'm specialized in the React ecosystem, with a strong focus on delivering high-quality, performant applications.
-  I’ve also been working on the backend. Mostly with NestJS and Django.
+  I've also worked extensively with backend technologies, primarily NestJS and Django.
   Over the past 10 years, I've been lucky enough to work on beautiful projects, making friends and gathering experience along the way.
   I'll be available for a new adventure from late March 2025. If you think my expertise fits the needs of your awesome project, let's have a chat!`,
 };

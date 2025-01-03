@@ -29,7 +29,7 @@ function App() {
     >
       <div className="p-0 sm:p-8">
         {/* Theme Toggle */}
-        <div className="max-w-4xl mx-auto flex justify-end">
+        <div className="max-w-4xl mx-auto flex justify-end p-2">
           <button
             onClick={() => setIsDark(!isDark)}
             className="py-2 px-4 text-2xl rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
